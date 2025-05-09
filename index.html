@@ -21,6 +21,7 @@
       background: #34495e;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
     }
     nav button {
       background: none;
@@ -49,14 +50,12 @@
       width: 100%;
       bottom: 0;
     }
-    input, textarea {
-      width: 100%;
-      padding: 0.5rem;
-      margin: 0.5rem 0;
-      box-sizing: border-box;
+    a {
+      color: #2980b9;
+      text-decoration: none;
     }
-    .form-group {
-      margin-bottom: 1rem;
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -83,6 +82,8 @@
     <h2>Frequently Asked Questions</h2>
     <h4>How do I join the server?</h4>
     <p>Join our Discord to get whitelisted and follow the instructions provided in the welcome channel.</p>
+    <h4>What games do you support?</h4>
+    <p>We mainly support GTA V via FiveM with realistic UK roleplay settings.</p>
     <h4>How do I report a player?</h4>
     <p>Use the contact form on this website or submit a report via our Discord's #report channel.</p>
   </div>
@@ -92,24 +93,35 @@
     <ul>
       <li>Respect all players and staff.</li>
       <li>No cheating, exploiting, or hacking.</li>
-      <li>Follow roleplay realism; .</li>
+      <li>Follow roleplay realism; no VDM or RDM.</li>
       <li>Use proper voice chat etiquette.</li>
       <li>Do not break character unless permitted.</li>
     </ul>
   </div>
 
-<div class="content" id="contact">
-  <h2>Contact Support</h2>
-  <p>
-    Thanks for showing your interest in contacting West London Roleplay.  
-    Please reach out to us via our Discord server for faster support:
-    <br><br>
-    👉 <a href="https://discord.gg/KtUVB96rN9" target="_blank">Join our Discord</a>
-  </p>
-</div>
+  <div class="content" id="contact">
+    <h2>Contact Support</h2>
+    <p>
+      Thanks for showing your interest in contacting West London Roleplay.  
+      Please reach out to us via our Discord server for faster support:
+    </p>
+    <p>
+      👉 <a href="https://discord.gg/YOUR_INVITE_CODE" target="_blank">Join our Discord</a>
+    </p>
+  </div>
+
+  <footer>
+    &copy; 2025 West London Roleplay | All rights reserved
+  </footer>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
   </script>
 
-  <!--Start of Tawk.to Script-->
+<!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
