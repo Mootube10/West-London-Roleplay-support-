@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>West London Roleplay Support</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background: #34495e;
+      display: flex;
+      justify-content: center;
+    }
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      padding: 1rem;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    nav button:hover {
+      background: #2c3e50;
+    }
+    .content {
+      padding: 2rem;
+      display: none;
+    }
+    .content.active {
+      display: block;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #2c3e50;
+      color: white;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      box-sizing: border-box;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>West London Roleplay Support</h1>
+    <p>Your help center for all roleplay questions and issues</p>
+  </header>
+
+  <nav>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('faq')">FAQ</button>
+    <button onclick="showPage('rules')">Rules</button>
+    <button onclick="showPage('contact')">Contact</button>
+  </nav>
+
+  <div class="content active" id="home">
+    <h2>Welcome to West London Roleplay Support</h2>
+    <p>We're here to assist you with any questions or issues you may have while roleplaying in our community.</p>
+    <p>Use the tabs above to navigate through our FAQ, rules, and support contact form.</p>
+  </div>
+
+  <div class="content" id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <h4>How do I join the server?</h4>
+    <p>Join our Discord to get whitelisted and follow the instructions provided in the welcome channel.</p>
+    <h4>What games do you support?</h4>
+    <p>We mainly support GTA V via FiveM with realistic UK roleplay settings.</p>
+    <h4>How do I report a player?</h4>
+    <p>Use the contact form on this website or submit a report via our Discord's #report channel.</p>
+  </div>
+
+  <div class="content" id="rules">
+    <h2>Community Rules</h2>
+    <ul>
+      <li>Respect all players and staff.</li>
+      <li>No cheating, exploiting, or hacking.</li>
+      <li>Follow roleplay realism; no VDM or RDM.</li>
+      <li>Use proper voice chat etiquette.</li>
+      <li>Do not break character unless permitted.</li>
+    </ul>
+  </div>
+
+  <div class="content" id="contact">
+    <h2>Contact Support</h2>
+    <form onsubmit="submitForm(event)">
+      <div class="form-group">
+        <label>Name:</label>
+        <input type="text" required>
+      </div>
+      <div class="form-group">
+        <label>Email:</label>
+        <input type="email" required>
+      </div>
+      <div class="form-group">
+        <label>Issue:</label>
+        <textarea rows="5" required></textarea>
+      </div>
+      <button type="submit">Send</button>
+    </form>
+    <p id="formResponse" style="color:green; display:none;">Thank you! Your message has been received.</p>
+  </div>
+
+  <footer>
+    &copy; 2025 West London Roleplay | All rights reserved
+  </footer>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.content').forEach(el => el.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+
+    function submitForm(event) {
+      event.preventDefault();
+      document.getElementById('formResponse').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
